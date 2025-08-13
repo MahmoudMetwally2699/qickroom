@@ -84,49 +84,70 @@ const FormPage = () => {
     }
   };
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-blue-100 via-purple-100 to-pink-100 px-4">
+  <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-blue-100 via-blue-200 to-blue-400 px-4">
       <ToastContainer />
       <div className="backdrop-blur-lg bg-white/70 border border-white/40 rounded-2xl shadow-2xl p-10 w-full max-w-xl transition-all duration-500 hover:scale-[1.02] hover:shadow-3xl">
-        <h2 className="text-3xl font-extrabold mb-8 text-center bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent drop-shadow-lg animate-fade-in">
+  <h2 className="text-3xl font-extrabold mb-8 text-center bg-gradient-to-r from-blue-500 via-purple-500 to-blue-400 bg-clip-text text-transparent drop-shadow-lg animate-fade-in">
           {t('hotelSignupForm')}
         </h2>
         <form className="space-y-4" onSubmit={handleSubmit}>
           <InputField
-            label={t('hotelName')}
+            label={t('hotelNameField')}
             type="text"
             name="hotelName"
             required
-            placeholder={t('hotelName')}
+            placeholder={t('hotelNameField')}
           />
           <InputField
-            label={t('email')}
+            label={t('cityField')}
+            type="text"
+            name="city"
+            required
+            placeholder={t('cityField')}
+          />
+          <SelectField
+            label={t('hotelTypeField')}
+            name="hotelType"
+            options={[{ value: 'group', label: t('hotelTypeGroup') }, { value: 'single', label: t('hotelTypeSingle') }]}
+            required
+          />
+          <InputField
+            label={t('emailField')}
             type="email"
             name="email"
             required
-            placeholder={t('email')}
+            placeholder={t('emailField')}
           />
           <InputField
-            label={t('phone')}
+            label={t('managerNameField')}
+            type="text"
+            name="managerName"
+            required
+            placeholder={t('managerNameField')}
+          />
+          <InputField
+            label={t('phoneField')}
             type="text"
             name="phone"
             required
-            placeholder={t('phone')}
+            placeholder={t('phoneField')}
           />
           <InputField
-            label={t('numAdmins')}
-            type="number"
-            name="numAdmins"
+            label={t('jobTitleField')}
+            type="text"
+            name="jobTitle"
             required
-            placeholder={t('numAdmins')}
+            placeholder={t('jobTitleField')}
           />
-          <SelectField
-            label={t('role')}
-            name="role"
-            options={roleOptions}
+          <InputField
+            label={t('managerOfficialEmailField')}
+            type="email"
+            name="managerOfficialEmail"
             required
+            placeholder={t('managerOfficialEmailField')}
           />
           <CheckboxGroup
-            label={t('services')}
+            label={t('servicesField')}
             name="services"
             options={serviceOptions}
             values={selectedServices}
@@ -134,13 +155,20 @@ const FormPage = () => {
             required
           />
           <TextareaField
-            label={t('additionalNotes')}
-            name="additionalNotes"
-            placeholder={t('additionalNotes')}
+            label={t('serviceDescriptionField')}
+            name="serviceDescription"
+            placeholder={t('serviceDescriptionField')}
+          />
+          <InputField
+            label={t('howDidYouKnowField')}
+            type="text"
+            name="howDidYouKnow"
+            required
+            placeholder={t('howDidYouKnowField')}
           />
           <button
             type="submit"
-            className="w-full py-3 mt-6 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-white font-bold rounded-xl shadow-lg hover:scale-105 hover:shadow-2xl transition-all duration-300"
+            className="w-full py-3 mt-6 bg-gradient-to-r from-blue-500 via-purple-500 to-blue-400 text-white font-bold rounded-xl shadow-lg hover:scale-105 hover:shadow-2xl transition-all duration-300"
           >
             {t('submitApplication')}
           </button>

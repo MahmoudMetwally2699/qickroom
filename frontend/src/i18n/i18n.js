@@ -4,6 +4,19 @@ import { initReactI18next } from 'react-i18next';
 const resources = {
   en: {
     translation: {
+  "hotelNameField": "Hotel Name",
+  "cityField": "City",
+  "hotelTypeField": "Hotel Type",
+  "hotelTypeGroup": "Hotel Group",
+  "hotelTypeSingle": "Single Hotel",
+  "emailField": "Email",
+  "managerNameField": "Manager Name",
+  "phoneField": "Phone Number",
+  "jobTitleField": "Job Title",
+  "managerOfficialEmailField": "Official Email",
+  "servicesField": "Select Services to Activate",
+  "serviceDescriptionField": "Brief Description of Services to Manage",
+  "howDidYouKnowField": "How did you hear about us?",
       // Add English translations here
       "welcome": "Welcome to QickRoom: Transform Your Hotel Operations",
       "subheading": "Simplify hotel management, enhance guest experiences, and maximize revenue with our all-in-one platform.",
@@ -61,7 +74,20 @@ const resources = {
   ar: {
     translation: {
       // Add Arabic translations here
-      "welcome": "مرحبًا بكم في كويك روم: غيّر عمليات فندقك",
+  "hotelNameField": "اسم الفندق",
+  "cityField": "المدينة",
+  "hotelTypeField": "نوع الفندق",
+  "hotelTypeGroup": "مجموعة فنادق",
+  "hotelTypeSingle": "فندق فردي",
+  "emailField": "البريد الإلكتروني",
+  "managerNameField": "اسم المسؤول",
+  "phoneField": "رقم الهاتف",
+  "jobTitleField": "المسمى الوظيفي",
+  "managerOfficialEmailField": "الإيميل الرسمي",
+  "servicesField": "تحديد الخدمات المطلوب تفعيلها",
+  "serviceDescriptionField": "وصف سريع عن الخدمات التي تريد إدارتها",
+  "howDidYouKnowField": "كيف تعرفت علينا؟",
+  "welcome": "مرحبًا بكم في كيك: غيّر عمليات فندقك",
       "subheading": "بسّط إدارة الفندق، عزز تجربة الضيوف، وزد الإيرادات مع منصتنا الشاملة.",
       "getStarted": "ابدأ الآن",
       "signUpNow": "سجّل الآن",
@@ -69,7 +95,7 @@ const resources = {
       "serviceCategories": "فئات الخدمات التي ندعمها",
       "getStartedToday": "ابدأ اليوم",
       "joinHotels": "انضم إلى مئات الفنادق التي تستخدم كويك روم لتحسين عملياتها. سجّل الآن وارتقِ بإدارة فندقك!",
-      "hotelSignupForm": "انضم إلى كويك روم: نموذج تسجيل الفندق",
+  "hotelSignupForm": "انضم إلى كيك: نموذج تسجيل الفندق",
       "hotelName": "اسم الفندق",
       "email": "البريد الإلكتروني",
       "phone": "رقم الهاتف",

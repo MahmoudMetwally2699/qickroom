@@ -89,14 +89,14 @@ const services = [
 const HomePage = () => {
   const { t } = useTranslation();
   return (
-    <div className="flex flex-col min-h-screen bg-gradient-to-br from-blue-100 via-purple-100 to-pink-100">
+  <div className="flex flex-col min-h-screen bg-gradient-to-br from-blue-100 via-blue-200 to-blue-400">
       <Header />
       {/* Modern Hero Section */}
       <section className="relative flex items-center justify-center min-h-[60vh] py-12 px-4">
-        <div className="absolute inset-0 z-0 bg-gradient-to-br from-blue-500/40 via-purple-500/30 to-pink-500/40 blur-xl"></div>
+  <div className="absolute inset-0 z-0 bg-gradient-to-br from-blue-500/40 via-blue-300/30 to-blue-400/40 blur-xl"></div>
         <div className="relative z-10 max-w-2xl w-full mx-auto backdrop-blur-lg bg-white/70 border border-white/40 rounded-3xl shadow-2xl p-10 flex flex-col items-center text-center animate-fade-in">
           <img src="/qickroom.svg" alt="QickRoom Logo" className="h-24 md:h-32 w-auto mb-6 drop-shadow-2xl animate-slide-down" />
-          <h1 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent animate-fade-in">
+          <h1 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-blue-500 via-purple-500 to-blue-400 bg-clip-text text-transparent animate-fade-in leading-[1.2] py-2 overflow-visible">
             {t('welcome')}
           </h1>
           <p className="text-lg md:text-xl mb-8 text-gray-700 font-medium animate-fade-in animate-delay-200">
@@ -104,7 +104,7 @@ const HomePage = () => {
           </p>
           <a
             href="/form"
-            className="inline-block px-8 py-4 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-white font-bold rounded-xl shadow-lg hover:scale-105 hover:shadow-2xl transition-all duration-300 z-50 relative animate-fade-in animate-delay-400"
+            className="inline-block px-8 py-4 bg-gradient-to-r from-blue-500 via-purple-500 to-blue-400 text-white font-bold rounded-xl shadow-lg hover:scale-105 hover:shadow-2xl transition-all duration-300 z-50 relative animate-fade-in animate-delay-400"
           >
             {t('getStarted')}
           </a>
@@ -112,7 +112,7 @@ const HomePage = () => {
       </section>
       <main className="flex-1 px-4 py-12">
         <section className="mb-16">
-          <h2 className="text-3xl font-extrabold mb-8 text-center bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent drop-shadow-lg animate-fade-in">
+          <h2 className="text-3xl font-extrabold mb-8 text-center bg-gradient-to-r from-blue-500 via-purple-500 to-blue-400 bg-clip-text text-transparent drop-shadow-lg animate-fade-in">
             {t('keyFeatures')}
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
