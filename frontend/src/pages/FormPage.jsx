@@ -146,6 +146,19 @@ const FormPage = () => {
             required
             placeholder={t('managerOfficialEmailField')}
           />
+          <InputField
+            label={t('numAdmins')}
+            type="number"
+            name="numAdmins"
+            required
+            placeholder={t('numAdmins')}
+          />
+          <SelectField
+            label={t('role')}
+            name="role"
+            options={roleOptions}
+            required
+          />
           <CheckboxGroup
             label={t('servicesField')}
             name="services"
@@ -165,6 +178,11 @@ const FormPage = () => {
             name="howDidYouKnow"
             required
             placeholder={t('howDidYouKnowField')}
+          />
+          <TextareaField
+            label={t('additionalNotes')}
+            name="additionalNotes"
+            placeholder={t('additionalNotes')}
           />
           <button
             type="submit"

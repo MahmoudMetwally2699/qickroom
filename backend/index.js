@@ -21,7 +21,7 @@ app.get('/api/ping', (req, res) => {
 // Handle form submissions from frontend
 app.post('/api/submit', async (req, res) => {
   console.log('Form submitted via /api/submit:', req.body);
-  const { hotelName, email, phone, numAdmins, role, services, additionalNotes } = req.body;
+  const { hotelName, city, hotelType, email, managerName, phone, jobTitle, managerOfficialEmail, numAdmins, role, services, serviceDescription, howDidYouKnow, additionalNotes } = req.body;
   try {
     const transporter = nodemailer.createTransport({
       host: process.env.SMTP_HOST,
@@ -37,7 +37,21 @@ app.post('/api/submit', async (req, res) => {
       from: process.env.SMTP_USER,
       to: process.env.TO_EMAIL,
       subject: `New QickRoom Signup: ${hotelName}`,
-      text: `Hotel Name: ${hotelName}\nEmail: ${email}\nPhone: ${phone}\nAdmins: ${numAdmins}\nRole: ${role}\nServices: ${Array.isArray(services) ? services.join(', ') : services}\nNotes: ${additionalNotes}`
+      text:
+        `Hotel Name: ${hotelName || ''}\n` +
+        `City: ${city || ''}\n` +
+        `Hotel Type: ${hotelType || ''}\n` +
+        `Email: ${email || ''}\n` +
+        `Manager Name: ${managerName || ''}\n` +
+        `Phone: ${phone || ''}\n` +
+        `Job Title: ${jobTitle || ''}\n` +
+        `Official Email: ${managerOfficialEmail || ''}\n` +
+        `Number of Admins: ${numAdmins || ''}\n` +
+        `Role: ${role || ''}\n` +
+        `Services: ${Array.isArray(services) ? services.join(', ') : (services || '')}\n` +
+        `Service Description: ${serviceDescription || ''}\n` +
+        `How Did You Know: ${howDidYouKnow || ''}\n` +
+        `Additional Notes: ${additionalNotes || ''}`
     };
 
     await transporter.sendMail(mailOptions);
@@ -49,7 +63,7 @@ app.post('/api/submit', async (req, res) => {
 });
 
 app.post('/api/contact', async (req, res) => {
-  const { hotelName, email, phone, numAdmins, role, services, additionalNotes } = req.body;
+  const { hotelName, city, hotelType, email, managerName, phone, jobTitle, managerOfficialEmail, numAdmins, role, services, serviceDescription, howDidYouKnow, additionalNotes } = req.body;
   try {
     const transporter = nodemailer.createTransport({
       host: process.env.SMTP_HOST,
@@ -65,7 +79,21 @@ app.post('/api/contact', async (req, res) => {
       from: process.env.SMTP_USER,
       to: process.env.TO_EMAIL,
       subject: `New QickRoom Signup: ${hotelName}`,
-      text: `Hotel Name: ${hotelName}\nEmail: ${email}\nPhone: ${phone}\nAdmins: ${numAdmins}\nRole: ${role}\nServices: ${Array.isArray(services) ? services.join(', ') : services}\nNotes: ${additionalNotes}`
+      text:
+        `Hotel Name: ${hotelName || ''}\n` +
+        `City: ${city || ''}\n` +
+        `Hotel Type: ${hotelType || ''}\n` +
+        `Email: ${email || ''}\n` +
+        `Manager Name: ${managerName || ''}\n` +
+        `Phone: ${phone || ''}\n` +
+        `Job Title: ${jobTitle || ''}\n` +
+        `Official Email: ${managerOfficialEmail || ''}\n` +
+        `Number of Admins: ${numAdmins || ''}\n` +
+        `Role: ${role || ''}\n` +
+        `Services: ${Array.isArray(services) ? services.join(', ') : (services || '')}\n` +
+        `Service Description: ${serviceDescription || ''}\n` +
+        `How Did You Know: ${howDidYouKnow || ''}\n` +
+        `Additional Notes: ${additionalNotes || ''}`
     };
 
     await transporter.sendMail(mailOptions);
