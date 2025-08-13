@@ -8,7 +8,9 @@ const app = express();
 app.use(cors({
   origin: [
     'http://localhost:5173',
-    'https://qickroom-q5xd.vercel.app'
+    'https://qickroom-q5xd.vercel.app',
+    'https://qickroom.com',
+    'https://api.qickroom.com'
   ],
   credentials: true
 }));
