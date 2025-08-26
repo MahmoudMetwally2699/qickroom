@@ -6,22 +6,22 @@ import Footer from '../components/Footer';
 // Hotel management benefits
 const hotelBenefits = [
   {
-    icon: "💼",
+    icon: "payment",
     title: 'easy_payment_handling',
     description: 'payment_system_with_organized_transactions'
   },
   {
-    icon: "⚙️",
+    icon: "settings",
     title: 'central_service_management',
     description: 'unified_platform_for_managing_all_internal_external_updates'
   },
   {
-    icon: "📈",
+    icon: "trending_up",
     title: 'revenue_increase',
     description: 'smart_revenue_management_commission_maximization'
   },
   {
-    icon: "⭐",
+    icon: "star",
     title: 'enhanced_customer_experience',
     description: 'smooth_seamless_service_experience_more_comfort'
   }
@@ -30,22 +30,22 @@ const hotelBenefits = [
 // Additional benefits
 const additionalBenefits = [
   {
-    icon: "🎯",
+    icon: "analytics",
     title: 'advanced_analytics',
     description: 'detailed_analytics_reports_better_decision_making'
   },
   {
-    icon: "👥",
+    icon: "group",
     title: 'quality_service',
     description: 'high_quality_service_standards_responsible_staff'
   },
   {
-    icon: "⏰",
+    icon: "schedule",
     title: 'time_saving',
     description: 'simplified_business_operations_time_efficiency'
   },
   {
-    icon: "😊",
+    icon: "sentiment_very_satisfied",
     title: 'highest_customer_satisfaction',
     description: 'excellent_experiences_highest_satisfaction_rates'
   }
@@ -142,7 +142,7 @@ const HomePage = () => {
                 <div className="text-center">
                   <div className="flex items-center justify-center lg:justify-end gap-2 mb-1">
                     <span className="text-2xl font-bold text-blue-600">+200</span>
-                    <span className="text-blue-600">📈</span>
+                    <span className="material-icons text-blue-600">trending_up</span>
                   </div>
                   <p className="text-gray-600 text-sm">{t('revenue_increase')}</p>
                 </div>
@@ -150,7 +150,7 @@ const HomePage = () => {
                 <div className="text-center">
                   <div className="flex items-center justify-center lg:justify-end gap-2 mb-1">
                     <span className="text-2xl font-bold text-green-600">+500</span>
-                    <span className="text-green-600">🏨</span>
+                    <span className="material-icons text-green-600">business</span>
                   </div>
                   <p className="text-gray-600 text-sm">{t('hotels')}</p>
                 </div>
@@ -159,7 +159,7 @@ const HomePage = () => {
               {/* Contact Info */}
               <div className="bg-blue-50 rounded-xl p-6 max-w-md mx-auto lg:mx-0 lg:ml-auto">
                 <div className="flex items-center gap-3 mb-2">
-                  <span className="text-blue-600">📞</span>
+                  <span className="material-icons text-blue-600">phone</span>
                   <span className="font-semibold text-gray-800">{t('contact_us')}</span>
                 </div>
                 <p className="text-gray-600 text-sm">
@@ -191,7 +191,7 @@ const HomePage = () => {
               <div className="absolute -bottom-4 -left-4 bg-white rounded-xl shadow-xl p-4 max-w-xs">
                 <div className="flex items-center gap-3">
                   <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
-                    <span className="text-blue-600 text-xl">📊</span>
+                    <span className="material-icons text-blue-600">bar_chart</span>
                   </div>
                   <div>
                     <h4 className="font-semibold text-gray-800 text-sm">{t('advanced_analytics')}</h4>
@@ -219,7 +219,9 @@ const HomePage = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {hotelBenefits.map((benefit, index) => (
                 <div key={index} className="bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
-                  <div className="text-4xl mb-4 text-center">{benefit.icon}</div>
+                  <div className="text-4xl mb-4 text-center">
+                    <span className="material-icons text-blue-600" style={{fontSize: '3rem'}}>{benefit.icon}</span>
+                  </div>
                   <h3 className="text-lg font-semibold text-gray-800 mb-2 text-center">
                     {t(benefit.title)}
                   </h3>
@@ -240,7 +242,9 @@ const HomePage = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {additionalBenefits.map((benefit, index) => (
                 <div key={index} className="bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
-                  <div className="text-4xl mb-4 text-center">{benefit.icon}</div>
+                  <div className="text-4xl mb-4 text-center">
+                    <span className="material-icons text-green-600" style={{fontSize: '3rem'}}>{benefit.icon}</span>
+                  </div>
                   <h3 className="text-lg font-semibold text-gray-800 mb-2 text-center">
                     {t(benefit.title)}
                   </h3>
@@ -271,7 +275,7 @@ const HomePage = () => {
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 {/* Restaurant Management */}
                 <div className="bg-white rounded-3xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
-                  <div className="h-48 bg-gradient-to-br from-orange-400 to-red-500">
+                  <div className="h-48 bg-gradient-to-br from-blue-400 to-blue-600">
                     <img
                       src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
                       alt="Restaurant Management"
@@ -280,7 +284,7 @@ const HomePage = () => {
                   </div>
                   <div className="p-6">
                     <div className="flex items-center gap-2 mb-3">
-                      <span className="text-2xl">🍽️</span>
+                      <span className="material-icons text-2xl">restaurant</span>
                       <h4 className="text-lg font-bold text-gray-800">{t('restaurant_management')}</h4>
                     </div>
                     <p className="text-gray-600 text-sm">
@@ -291,7 +295,7 @@ const HomePage = () => {
 
                 {/* Guest Management */}
                 <div className="bg-white rounded-3xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
-                  <div className="h-48 bg-gradient-to-br from-blue-400 to-purple-500">
+                  <div className="h-48 bg-gradient-to-br from-blue-400 to-blue-600">
                     <img
                       src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
                       alt="Guest Management"
@@ -300,7 +304,7 @@ const HomePage = () => {
                   </div>
                   <div className="p-6">
                     <div className="flex items-center gap-2 mb-3">
-                      <span className="text-2xl">👥</span>
+                      <span className="material-icons text-2xl">people</span>
                       <h4 className="text-lg font-bold text-gray-800">{t('guest_management')}</h4>
                     </div>
                     <p className="text-gray-600 text-sm">
@@ -311,7 +315,7 @@ const HomePage = () => {
 
                 {/* Room Management */}
                 <div className="bg-white rounded-3xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
-                  <div className="h-48 bg-gradient-to-br from-teal-400 to-green-500">
+                  <div className="h-48 bg-gradient-to-br from-blue-400 to-blue-600">
                     <img
                       src="https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
                       alt="Room Management"
@@ -320,7 +324,7 @@ const HomePage = () => {
                   </div>
                   <div className="p-6">
                     <div className="flex items-center gap-2 mb-3">
-                      <span className="text-2xl">🛏️</span>
+                      <span className="material-icons text-2xl">bed</span>
                       <h4 className="text-lg font-bold text-gray-800">{t('room_management')}</h4>
                     </div>
                     <p className="text-gray-600 text-sm">
@@ -340,16 +344,16 @@ const HomePage = () => {
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 {/* Delivery Services */}
-                <div className="bg-gradient-to-br from-green-50 to-green-100 rounded-2xl p-6 border border-green-200 hover:shadow-lg transition-shadow duration-300">
+                <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-6 border border-blue-200 hover:shadow-lg transition-shadow duration-300">
                   <div className="text-center">
-                    <div className="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                      <span className="text-white text-2xl">🚚</span>
+                    <div className="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <span className="material-icons text-white text-2xl">local_shipping</span>
                     </div>
                     <h4 className="text-lg font-bold text-gray-800 mb-2">{t('delivery_services')}</h4>
                     <p className="text-gray-600 text-sm mb-4">
                       {t('delivery_services_desc')}
                     </p>
-                    <span className="inline-block px-3 py-1 bg-green-200 text-green-800 rounded-full text-xs font-medium">
+                    <span className="inline-block px-3 py-1 bg-blue-200 text-blue-800 rounded-full text-xs font-medium">
                       {t('delivery')}
                     </span>
                   </div>
@@ -359,7 +363,7 @@ const HomePage = () => {
                 <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-6 border border-blue-200 hover:shadow-lg transition-shadow duration-300">
                   <div className="text-center">
                     <div className="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                      <span className="text-white text-2xl">📍</span>
+                      <span className="material-icons text-white text-2xl">place</span>
                     </div>
                     <h4 className="text-lg font-bold text-gray-800 mb-2">{t('tourism_services')}</h4>
                     <p className="text-gray-600 text-sm mb-4">
@@ -372,16 +376,16 @@ const HomePage = () => {
                 </div>
 
                 {/* Car Rental Services */}
-                <div className="bg-gradient-to-br from-purple-50 to-purple-100 rounded-2xl p-6 border border-purple-200 hover:shadow-lg transition-shadow duration-300">
+                <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-6 border border-blue-200 hover:shadow-lg transition-shadow duration-300">
                   <div className="text-center">
-                    <div className="w-16 h-16 bg-purple-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                      <span className="text-white text-2xl">🚗</span>
+                    <div className="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <span className="material-icons text-white text-2xl">directions_car</span>
                     </div>
                     <h4 className="text-lg font-bold text-gray-800 mb-2">{t('car_rental_services')}</h4>
                     <p className="text-gray-600 text-sm mb-4">
                       {t('car_rental_services_desc')}
                     </p>
-                    <span className="inline-block px-3 py-1 bg-purple-200 text-purple-800 rounded-full text-xs font-medium">
+                    <span className="inline-block px-3 py-1 bg-blue-200 text-blue-800 rounded-full text-xs font-medium">
                       {t('rental')}
                     </span>
                   </div>
@@ -391,11 +395,11 @@ const HomePage = () => {
           </div>
 
           {/* WhatsApp Integration Section */}
-          <div className="bg-gradient-to-br from-green-50 to-emerald-100 rounded-3xl p-8 mb-16">
+          <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-3xl p-8 mb-16">
             <div className="text-center mb-8">
               <div className="flex items-center justify-center gap-3 mb-4">
-                <div className="w-12 h-12 bg-green-500 rounded-2xl flex items-center justify-center">
-                  <span className="text-white text-2xl">📱</span>
+                <div className="w-12 h-12 bg-blue-500 rounded-2xl flex items-center justify-center">
+                  <span className="material-icons text-white text-2xl">smartphone</span>
                 </div>
                 <h2 className="text-3xl font-bold text-gray-800">
                   {t('instant_continuous_communication')}
@@ -409,9 +413,9 @@ const HomePage = () => {
               <div className="mt-6">
                 <a
                   href="/form"
-                  className="bg-green-500 hover:bg-green-600 text-white font-bold px-6 py-3 rounded-full shadow-lg transition-all duration-300 flex items-center gap-2 mx-auto w-fit"
+                  className="bg-blue-500 hover:bg-blue-600 text-white font-bold px-6 py-3 rounded-full shadow-lg transition-all duration-300 flex items-center gap-2 mx-auto w-fit"
                 >
-                  <span className="text-xl">📱</span>
+                  <span className="material-icons text-xl">chat</span>
                   {t('integrate_with_whatsapp')}
                 </a>
               </div>
@@ -433,15 +437,15 @@ const HomePage = () => {
                     className="w-full h-full object-cover mix-blend-overlay opacity-60"
                   />
                   <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-lg p-2">
-                    <span className="text-2xl">🔔</span>
+                    <span className="material-icons text-2xl">notifications</span>
                   </div>
                   <div className="absolute bottom-4 left-4 bg-green-500 rounded-full w-8 h-8 flex items-center justify-center">
-                    <span className="text-white text-sm">📱</span>
+                    <span className="material-icons text-white text-sm">smartphone</span>
                   </div>
                 </div>
                 <div className="p-6">
                   <h4 className="text-lg font-bold text-gray-800 mb-2 flex items-center gap-2">
-                    <span className="text-2xl">📨</span>
+                    <span className="material-icons text-2xl">email</span>
                     {t('hotel_notifications')}
                   </h4>
                   <p className="text-gray-600 text-sm">
@@ -452,24 +456,24 @@ const HomePage = () => {
 
               {/* Guest Requests */}
               <div className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
-                <div className="relative h-48 bg-gradient-to-br from-green-400 to-emerald-600">
+                <div className="relative h-48 bg-gradient-to-br from-blue-400 to-blue-600">
                   <div className="absolute inset-0 flex items-center justify-center">
                     <div className="w-24 h-24 bg-white/20 rounded-full flex items-center justify-center">
-                      <span className="text-white text-4xl">📱</span>
+                      <span className="material-icons text-white text-4xl">smartphone</span>
                     </div>
                   </div>
                   <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-lg p-2">
-                    <span className="text-green-600 font-bold text-sm">1</span>
+                    <span className="text-blue-600 font-bold text-sm">1</span>
                   </div>
                   <div className="absolute bottom-4 left-4">
                     <div className="bg-white rounded-lg px-3 py-1">
-                      <span className="text-green-600 text-xs font-medium">{t('request_sent')}</span>
+                      <span className="text-blue-600 text-xs font-medium">{t('request_sent')}</span>
                     </div>
                   </div>
                 </div>
                 <div className="p-6">
                   <h4 className="text-lg font-bold text-gray-800 mb-2 flex items-center gap-2">
-                    <span className="text-2xl">📞</span>
+                    <span className="material-icons text-2xl">phone</span>
                     {t('guest_requests')}
                   </h4>
                   <p className="text-gray-600 text-sm">
@@ -480,24 +484,24 @@ const HomePage = () => {
 
               {/* Automatic Updates */}
               <div className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
-                <div className="relative h-48 bg-gradient-to-br from-emerald-400 to-green-600">
+                <div className="relative h-48 bg-gradient-to-br from-blue-400 to-blue-600">
                   <div className="absolute inset-0 flex items-center justify-center">
                     <div className="w-24 h-24 bg-white/20 rounded-full flex items-center justify-center">
-                      <span className="text-white text-4xl">🔄</span>
+                      <span className="material-icons text-white text-4xl">sync</span>
                     </div>
                   </div>
                   <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-lg p-2">
-                    <span className="text-green-600 font-bold text-sm">2</span>
+                    <span className="text-blue-600 font-bold text-sm">2</span>
                   </div>
                   <div className="absolute bottom-4 left-4">
                     <div className="bg-white rounded-lg px-3 py-1">
-                      <span className="text-green-600 text-xs font-medium">{t('auto_update')}</span>
+                      <span className="text-blue-600 text-xs font-medium">{t('auto_update')}</span>
                     </div>
                   </div>
                 </div>
                 <div className="p-6">
                   <h4 className="text-lg font-bold text-gray-800 mb-2 flex items-center gap-2">
-                    <span className="text-2xl">🔄</span>
+                    <span className="material-icons text-2xl">sync</span>
                     {t('automatic_updates')}
                   </h4>
                   <p className="text-gray-600 text-sm">
@@ -508,24 +512,24 @@ const HomePage = () => {
 
               {/* External Service Providers */}
               <div className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
-                <div className="relative h-48 bg-gradient-to-br from-purple-400 to-blue-600">
+                <div className="relative h-48 bg-gradient-to-br from-blue-400 to-blue-600">
                   <img
                     src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
                     alt="Service Providers"
                     className="w-full h-full object-cover mix-blend-overlay opacity-50"
                   />
                   <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-lg p-2">
-                    <span className="text-purple-600 font-bold text-sm">3</span>
+                    <span className="text-blue-600 font-bold text-sm">3</span>
                   </div>
                   <div className="absolute bottom-4 left-4">
                     <div className="bg-white rounded-lg px-3 py-1">
-                      <span className="text-purple-600 text-xs font-medium">{t('provider_connected')}</span>
+                      <span className="text-blue-600 text-xs font-medium">{t('provider_connected')}</span>
                     </div>
                   </div>
                 </div>
                 <div className="p-6">
                   <h4 className="text-lg font-bold text-gray-800 mb-2 flex items-center gap-2">
-                    <span className="text-2xl">👥</span>
+                    <span className="material-icons text-2xl">group</span>
                     {t('external_service_providers_whatsapp')}
                   </h4>
                   <p className="text-gray-600 text-sm">
@@ -550,8 +554,8 @@ const HomePage = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   {/* Customer Satisfaction */}
                   <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
-                    <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center mb-4">
-                      <span className="text-green-600 text-2xl">💚</span>
+                    <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-4">
+                      <span className="material-icons text-blue-600 text-2xl">favorite</span>
                     </div>
                     <h3 className="text-lg font-bold text-gray-800 mb-2">
                       {t('customer_satisfaction_benefit')}
@@ -564,7 +568,7 @@ const HomePage = () => {
                   {/* Transparency */}
                   <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
                     <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-4">
-                      <span className="text-blue-600 text-2xl">👁️</span>
+                      <span className="material-icons text-blue-600 text-2xl">visibility</span>
                     </div>
                     <h3 className="text-lg font-bold text-gray-800 mb-2">
                       {t('transparency_benefit')}
@@ -576,8 +580,8 @@ const HomePage = () => {
 
                   {/* Fast Response */}
                   <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
-                    <div className="w-12 h-12 bg-yellow-100 rounded-xl flex items-center justify-center mb-4">
-                      <span className="text-yellow-600 text-2xl">⚡</span>
+                    <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-4">
+                      <span className="material-icons text-blue-600 text-2xl">flash_on</span>
                     </div>
                     <h3 className="text-lg font-bold text-gray-800 mb-2">
                       {t('fast_response_benefit')}
@@ -589,8 +593,8 @@ const HomePage = () => {
 
                   {/* Instant Notifications */}
                   <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
-                    <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mb-4">
-                      <span className="text-purple-600 text-2xl">📱</span>
+                    <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-4">
+                      <span className="material-icons text-blue-600 text-2xl">notifications</span>
                     </div>
                     <h3 className="text-lg font-bold text-gray-800 mb-2">
                       {t('instant_notifications_benefit')}
@@ -604,7 +608,7 @@ const HomePage = () => {
 
               {/* Right Side - WhatsApp Integration Panel */}
               <div className="bg-white rounded-3xl shadow-2xl overflow-hidden">
-                <div className="bg-gradient-to-r from-green-500 to-emerald-600 p-6">
+                <div className="bg-gradient-to-r from-blue-500 to-blue-600 p-6">
                   <div className="flex items-center justify-between">
                     <h3 className="text-xl font-bold text-white">
                       {t('whatsapp_integration_panel')}
@@ -612,11 +616,11 @@ const HomePage = () => {
                     <div className="flex items-center gap-2">
                       <span className="text-white text-sm">WhatsApp</span>
                       <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center">
-                        <span className="text-green-600 text-sm font-bold">📱</span>
+                        <span className="material-icons text-blue-600 text-sm">chat</span>
                       </div>
                     </div>
                   </div>
-                  <p className="text-green-100 text-sm mt-2">
+                  <p className="text-blue-100 text-sm mt-2">
                     {t('whatsapp_panel_description')}
                   </p>
                 </div>
@@ -691,7 +695,7 @@ const HomePage = () => {
               <div className="space-y-8">
                 <div>
                   <h2 className="text-3xl font-bold text-gray-800 mb-4 flex items-center gap-3">
-                    <span className="text-green-600">💰</span>
+                    <span className="material-icons text-blue-600">attach_money</span>
                     {t('increase_profits_title')}
                   </h2>
                   <p className="text-gray-600 text-lg leading-relaxed">
@@ -702,23 +706,23 @@ const HomePage = () => {
                 {/* Benefits List */}
                 <div className="space-y-4">
                   <div className="flex items-center gap-3">
-                    <span className="w-6 h-6 bg-green-500 rounded-full text-white text-sm flex items-center justify-center">✓</span>
+                    <span className="w-6 h-6 bg-blue-500 rounded-full text-white text-sm flex items-center justify-center">✓</span>
                     <span className="text-gray-700">{t('profit_benefit_1')}</span>
                   </div>
                   <div className="flex items-center gap-3">
-                    <span className="w-6 h-6 bg-green-500 rounded-full text-white text-sm flex items-center justify-center">✓</span>
+                    <span className="w-6 h-6 bg-blue-500 rounded-full text-white text-sm flex items-center justify-center">✓</span>
                     <span className="text-gray-700">{t('profit_benefit_2')}</span>
                   </div>
                   <div className="flex items-center gap-3">
-                    <span className="w-6 h-6 bg-green-500 rounded-full text-white text-sm flex items-center justify-center">✓</span>
+                    <span className="w-6 h-6 bg-blue-500 rounded-full text-white text-sm flex items-center justify-center">✓</span>
                     <span className="text-gray-700">{t('profit_benefit_3')}</span>
                   </div>
                   <div className="flex items-center gap-3">
-                    <span className="w-6 h-6 bg-green-500 rounded-full text-white text-sm flex items-center justify-center">✓</span>
+                    <span className="w-6 h-6 bg-blue-500 rounded-full text-white text-sm flex items-center justify-center">✓</span>
                     <span className="text-gray-700">{t('profit_benefit_4')}</span>
                   </div>
                   <div className="flex items-center gap-3">
-                    <span className="w-6 h-6 bg-green-500 rounded-full text-white text-sm flex items-center justify-center">✓</span>
+                    <span className="w-6 h-6 bg-blue-500 rounded-full text-white text-sm flex items-center justify-center">✓</span>
                     <span className="text-gray-700">{t('profit_benefit_5')}</span>
                   </div>
                 </div>
@@ -727,7 +731,7 @@ const HomePage = () => {
                 <div>
                   <a
                     href="/form"
-                    className="bg-green-500 hover:bg-green-600 text-white font-bold px-8 py-4 rounded-xl shadow-lg transition-all duration-300 transform hover:scale-105 inline-block"
+                    className="bg-blue-500 hover:bg-blue-600 text-white font-bold px-8 py-4 rounded-xl shadow-lg transition-all duration-300 transform hover:scale-105 inline-block"
                   >
                     {t('discover_how_to_increase_profits')}
                   </a>
@@ -740,7 +744,7 @@ const HomePage = () => {
                   {/* Profit Margin Management */}
                   <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-6 border border-blue-200">
                     <div className="w-12 h-12 bg-blue-500 rounded-xl flex items-center justify-center mb-4">
-                      <span className="text-white text-2xl">📈</span>
+                      <span className="material-icons text-white text-2xl">trending_up</span>
                     </div>
                     <h3 className="text-lg font-bold text-gray-800 mb-2">
                       {t('profit_margin_management')}
@@ -751,9 +755,9 @@ const HomePage = () => {
                   </div>
 
                   {/* Payment Processing */}
-                  <div className="bg-gradient-to-br from-purple-50 to-purple-100 rounded-2xl p-6 border border-purple-200">
-                    <div className="w-12 h-12 bg-purple-500 rounded-xl flex items-center justify-center mb-4">
-                      <span className="text-white text-2xl">💳</span>
+                  <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-6 border border-blue-200">
+                    <div className="w-12 h-12 bg-blue-500 rounded-xl flex items-center justify-center mb-4">
+                      <span className="material-icons text-white text-2xl">credit_card</span>
                     </div>
                     <h3 className="text-lg font-bold text-gray-800 mb-2">
                       {t('payment_processing')}
@@ -764,9 +768,9 @@ const HomePage = () => {
                   </div>
 
                   {/* Smart Management */}
-                  <div className="bg-gradient-to-br from-teal-50 to-teal-100 rounded-2xl p-6 border border-teal-200">
-                    <div className="w-12 h-12 bg-teal-500 rounded-xl flex items-center justify-center mb-4">
-                      <span className="text-white text-2xl">🧠</span>
+                  <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-6 border border-blue-200">
+                    <div className="w-12 h-12 bg-blue-500 rounded-xl flex items-center justify-center mb-4">
+                      <span className="material-icons text-white text-2xl">psychology</span>
                     </div>
                     <h3 className="text-lg font-bold text-gray-800 mb-2">
                       {t('smart_management')}
@@ -777,9 +781,9 @@ const HomePage = () => {
                   </div>
 
                   {/* Financial Reports */}
-                  <div className="bg-gradient-to-br from-orange-50 to-orange-100 rounded-2xl p-6 border border-orange-200">
-                    <div className="w-12 h-12 bg-orange-500 rounded-xl flex items-center justify-center mb-4">
-                      <span className="text-white text-2xl">📊</span>
+                  <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-6 border border-blue-200">
+                    <div className="w-12 h-12 bg-blue-500 rounded-xl flex items-center justify-center mb-4">
+                      <span className="material-icons text-white text-2xl">bar_chart</span>
                     </div>
                     <h3 className="text-lg font-bold text-gray-800 mb-2">
                       {t('financial_reports')}
@@ -868,7 +872,7 @@ const HomePage = () => {
           <div className="text-center">
             <a
               href="/form"
-              className="inline-block px-8 py-4 bg-gradient-to-r from-green-500 to-blue-500 text-white font-bold rounded-xl shadow-lg hover:scale-105 hover:shadow-2xl transition-all duration-300"
+              className="inline-block px-8 py-4 bg-blue-500 hover:bg-blue-600 text-white font-bold rounded-xl shadow-lg hover:scale-105 hover:shadow-2xl transition-all duration-300"
             >
               {t('getStarted')}
             </a>

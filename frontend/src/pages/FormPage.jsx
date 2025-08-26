@@ -186,7 +186,7 @@ const FormPage = () => {
           />
           <button
             type="submit"
-            className="w-full py-3 mt-6 bg-gradient-to-r from-blue-500 via-purple-500 to-blue-400 text-white font-bold rounded-xl shadow-lg hover:scale-105 hover:shadow-2xl transition-all duration-300"
+            className="w-full py-3 mt-6 bg-blue-500 hover:bg-blue-600 text-white font-bold rounded-xl shadow-lg hover:scale-105 hover:shadow-2xl transition-all duration-300"
           >
             {t('submitApplication')}
           </button>
