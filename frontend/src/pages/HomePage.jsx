@@ -1,157 +1,884 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import Header from '../components/Header';
-import FeatureCard from '../components/FeatureCard';
-import ServiceItem from '../components/ServiceItem';
 import Footer from '../components/Footer';
 
-const features = [
+// Hotel management benefits
+const hotelBenefits = [
   {
-    icon: <span role="img" aria-label="Hotel">🏨</span>,
-    title: 'feature_hotel_management',
-    description: 'feature_hotel_management_desc'
+    icon: "💼",
+    title: 'easy_payment_handling',
+    description: 'payment_system_with_organized_transactions'
   },
   {
-    icon: <span role="img" aria-label="Provider">🤝</span>,
-    title: 'feature_service_provider',
-    description: 'feature_service_provider_desc'
+    icon: "⚙️",
+    title: 'central_service_management',
+    description: 'unified_platform_for_managing_all_internal_external_updates'
   },
   {
-    icon: <span role="img" aria-label="Booking">🛎️</span>,
-    title: 'feature_guest_booking',
-    description: 'feature_guest_booking_desc'
+    icon: "📈",
+    title: 'revenue_increase',
+    description: 'smart_revenue_management_commission_maximization'
   },
   {
-    icon: <span role="img" aria-label="Dashboard">📊</span>,
-    title: 'feature_role_based_dashboards',
-    description: 'feature_role_based_dashboards_desc'
-  },
-  {
-    icon: <span role="img" aria-label="Notification">🔔</span>,
-    title: 'feature_real_time_notifications',
-    description: 'feature_real_time_notifications_desc'
-  },
-  {
-    icon: <span role="img" aria-label="Payment">💳</span>,
-    title: 'feature_secure_payment',
-    description: 'feature_secure_payment_desc'
-  },
-  {
-    icon: <span role="img" aria-label="Multi-Tenant">🏢</span>,
-    title: 'feature_multi_tenant',
-    description: 'feature_multi_tenant_desc'
+    icon: "⭐",
+    title: 'enhanced_customer_experience',
+    description: 'smooth_seamless_service_experience_more_comfort'
   }
 ];
 
-const services = [
+// Additional benefits
+const additionalBenefits = [
   {
-    icon: <span role="img" aria-label="Laundry">🧺</span>,
-    name: 'service_laundry',
-    description: 'service_laundry_desc'
+    icon: "🎯",
+    title: 'advanced_analytics',
+    description: 'detailed_analytics_reports_better_decision_making'
   },
   {
-    icon: <span role="img" aria-label="Transportation">🚗</span>,
-    name: 'service_transportation',
-    description: 'service_transportation_desc'
+    icon: "👥",
+    title: 'quality_service',
+    description: 'high_quality_service_standards_responsible_staff'
   },
   {
-    icon: <span role="img" aria-label="Travel">🌍</span>,
-    name: 'service_travel',
-    description: 'service_travel_desc'
+    icon: "⏰",
+    title: 'time_saving',
+    description: 'simplified_business_operations_time_efficiency'
   },
   {
-    icon: <span role="img" aria-label="Spa">💆‍♂️</span>,
-    name: 'service_spa',
-    description: 'service_spa_desc'
-  },
-  {
-    icon: <span role="img" aria-label="Dining">🍽️</span>,
-    name: 'service_dining',
-    description: 'service_dining_desc'
-  },
-  {
-    icon: <span role="img" aria-label="Entertainment">🎭</span>,
-    name: 'service_entertainment',
-    description: 'service_entertainment_desc'
-  },
-  {
-    icon: <span role="img" aria-label="Shopping">🛍️</span>,
-    name: 'service_shopping',
-    description: 'service_shopping_desc'
-  },
-  {
-    icon: <span role="img" aria-label="Fitness">🏋️‍♂️</span>,
-    name: 'service_fitness',
-    description: 'service_fitness_desc'
+    icon: "😊",
+    title: 'highest_customer_satisfaction',
+    description: 'excellent_experiences_highest_satisfaction_rates'
   }
 ];
 
 const HomePage = () => {
   const { t } = useTranslation();
+  const [expandedFAQ, setExpandedFAQ] = useState(null);
+
+  const faqData = [
+    {
+      question: 'faq_implementation_time_question',
+      answer: 'faq_implementation_time_answer'
+    },
+    {
+      question: 'faq_profit_margins_question',
+      answer: 'faq_profit_margins_answer'
+    },
+    {
+      question: 'faq_financial_security_question',
+      answer: 'faq_financial_security_answer'
+    },
+    {
+      question: 'faq_system_integration_question',
+      answer: 'faq_system_integration_answer'
+    },
+    {
+      question: 'faq_technical_support_question',
+      answer: 'faq_technical_support_answer'
+    },
+    {
+      question: 'faq_pricing_question',
+      answer: 'faq_pricing_answer'
+    },
+    {
+      question: 'faq_trial_period_question',
+      answer: 'faq_trial_period_answer'
+    }
+  ];
+
+  const toggleFAQ = (index) => {
+    setExpandedFAQ(expandedFAQ === index ? null : index);
+  };
+
   return (
-  <div className="flex flex-col min-h-screen bg-gradient-to-br from-blue-100 via-blue-200 to-blue-400">
+    <div className="min-h-screen bg-white">
       <Header />
-      {/* Modern Hero Section */}
-      <section className="relative flex items-center justify-center min-h-[60vh] py-12 px-4">
-  <div className="absolute inset-0 z-0 bg-gradient-to-br from-blue-500/40 via-blue-300/30 to-blue-400/40 blur-xl"></div>
-        <div className="relative z-10 max-w-2xl w-full mx-auto backdrop-blur-lg bg-white/70 border border-white/40 rounded-3xl shadow-2xl p-10 flex flex-col items-center text-center animate-fade-in">
-          <img src="/qickroom.svg" alt="QickRoom Logo" className="h-24 md:h-32 w-auto mb-6 drop-shadow-2xl animate-slide-down" />
-          <h1 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-blue-500 via-purple-500 to-blue-400 bg-clip-text text-transparent animate-fade-in leading-[1.2] py-2 overflow-visible">
-            {t('welcome')}
-          </h1>
-          <p className="text-lg md:text-xl mb-8 text-gray-700 font-medium animate-fade-in animate-delay-200">
-            {t('subheading')}
-          </p>
-          <a
-            href="/form"
-            className="inline-block px-8 py-4 bg-gradient-to-r from-blue-500 via-purple-500 to-blue-400 text-white font-bold rounded-xl shadow-lg hover:scale-105 hover:shadow-2xl transition-all duration-300 z-50 relative animate-fade-in animate-delay-400"
-          >
-            {t('getStarted')}
-          </a>
+
+      {/* Hero Section */}
+      <section className="relative min-h-[80vh] flex items-center px-4 py-8">
+        <div className="max-w-7xl mx-auto w-full">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Left Content */}
+            <div className="text-center lg:text-right space-y-8">
+              <div className="space-y-6">
+                <h1 className="text-4xl lg:text-6xl font-bold text-gray-800 leading-tight">
+                  <span className="block">{t('comprehensive_solution')}</span>
+                  <span className="block text-blue-600">{t('hotel_services_management')}</span>
+                </h1>
+
+                <p className="text-lg lg:text-xl text-gray-600 max-w-2xl mx-auto lg:mx-0">
+                  {t('hero_description')}
+                </p>
+              </div>
+
+              {/* Action Buttons */}
+              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-end">
+                <a
+                  href="/form"
+                  className="px-8 py-4 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors duration-300 shadow-lg text-center"
+                >
+                  {t('request_demo')}
+                </a>
+                <a
+                  href="/form"
+                  className="px-8 py-4 border-2 border-blue-600 text-blue-600 font-semibold rounded-lg hover:bg-blue-50 transition-colors duration-300 text-center"
+                >
+                  {t('register_hotel_now')}
+                </a>
+              </div>
+
+              {/* Stats */}
+              <div className="flex justify-center lg:justify-end gap-8 pt-8">
+                <div className="text-center">
+                  <div className="flex items-center justify-center lg:justify-end gap-1 mb-1">
+                    <span className="text-2xl font-bold text-gray-800">4.9/5</span>
+                    <div className="flex text-yellow-400">
+                      <span>⭐</span>
+                    </div>
+                  </div>
+                  <p className="text-gray-600 text-sm">{t('rating')}</p>
+                </div>
+
+                <div className="text-center">
+                  <div className="flex items-center justify-center lg:justify-end gap-2 mb-1">
+                    <span className="text-2xl font-bold text-blue-600">+200</span>
+                    <span className="text-blue-600">📈</span>
+                  </div>
+                  <p className="text-gray-600 text-sm">{t('revenue_increase')}</p>
+                </div>
+
+                <div className="text-center">
+                  <div className="flex items-center justify-center lg:justify-end gap-2 mb-1">
+                    <span className="text-2xl font-bold text-green-600">+500</span>
+                    <span className="text-green-600">🏨</span>
+                  </div>
+                  <p className="text-gray-600 text-sm">{t('hotels')}</p>
+                </div>
+              </div>
+
+              {/* Contact Info */}
+              <div className="bg-blue-50 rounded-xl p-6 max-w-md mx-auto lg:mx-0 lg:ml-auto">
+                <div className="flex items-center gap-3 mb-2">
+                  <span className="text-blue-600">📞</span>
+                  <span className="font-semibold text-gray-800">{t('contact_us')}</span>
+                </div>
+                <p className="text-gray-600 text-sm">
+                  {t('integrated_service_management_platform')}
+                </p>
+              </div>
+            </div>
+
+            {/* Right Image */}
+            <div className="relative">
+              <div className="relative rounded-3xl overflow-hidden shadow-2xl">
+                <img
+                  src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+                  alt="Luxury Hotel Lobby"
+                  className="w-full h-[500px] lg:h-[600px] object-cover"
+                />
+
+                {/* Overlay Elements */}
+                <div className="absolute top-6 left-6 bg-white/90 backdrop-blur-sm rounded-lg p-4 shadow-lg">
+                  <div className="flex items-center gap-2 mb-1">
+                    <span className="w-2 h-2 bg-green-500 rounded-full"></span>
+                    <span className="text-sm font-semibold text-gray-800">{t('online')}</span>
+                  </div>
+                  <p className="text-xs text-gray-600">{t('integrated_service_management_platform')}</p>
+                </div>
+              </div>
+
+              {/* Floating Cards */}
+              <div className="absolute -bottom-4 -left-4 bg-white rounded-xl shadow-xl p-4 max-w-xs">
+                <div className="flex items-center gap-3">
+                  <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
+                    <span className="text-blue-600 text-xl">📊</span>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-gray-800 text-sm">{t('advanced_analytics')}</h4>
+                    <p className="text-gray-600 text-xs">{t('real_time_insights')}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
-      <main className="flex-1 px-4 py-12">
-        <section className="mb-16">
-          <h2 className="text-3xl font-extrabold mb-8 text-center bg-gradient-to-r from-blue-500 via-purple-500 to-blue-400 bg-clip-text text-transparent drop-shadow-lg animate-fade-in">
-            {t('keyFeatures')}
-          </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {features.map((f, i) => (
-              <div className="backdrop-blur-lg bg-white/70 border border-white/40 rounded-2xl shadow-2xl p-6 transition-all duration-500 hover:scale-[1.03] hover:shadow-3xl">
-                <FeatureCard key={i} {...f} />
-              </div>
-            ))}
+
+      {/* Main Content Sections */}
+      <div className="px-4 py-16">
+        <div className="max-w-6xl mx-auto">
+          {/* Why choose QickRoom section */}
+          <div className="text-center mb-16">
+            <h2 className="text-3xl font-bold text-gray-800 mb-4">
+              {t('why_choose_qickroom')}
+            </h2>
+            <p className="text-gray-600 mb-12 max-w-3xl mx-auto">
+              {t('qickroom_description')}
+            </p>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {hotelBenefits.map((benefit, index) => (
+                <div key={index} className="bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
+                  <div className="text-4xl mb-4 text-center">{benefit.icon}</div>
+                  <h3 className="text-lg font-semibold text-gray-800 mb-2 text-center">
+                    {t(benefit.title)}
+                  </h3>
+                  <p className="text-gray-600 text-sm text-center">
+                    {t(benefit.description)}
+                  </p>
+                </div>
+              ))}
+            </div>
           </div>
-        </section>
-        <section className="mb-16">
-          <h2 className="text-3xl font-extrabold mb-8 text-center bg-gradient-to-r from-green-500 via-blue-500 to-purple-500 bg-clip-text text-transparent drop-shadow-lg animate-fade-in">
-            {t('serviceCategories')}
-          </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {services.map((s, i) => (
-              <div className="backdrop-blur-lg bg-white/70 border border-white/40 rounded-2xl shadow-2xl p-6 transition-all duration-500 hover:scale-[1.03] hover:shadow-3xl">
-                <ServiceItem key={i} {...s} />
-              </div>
-            ))}
+
+          {/* Additional benefits */}
+          <div className="text-center mb-16">
+            <h2 className="text-3xl font-bold text-gray-800 mb-12">
+              {t('additional_benefits')}
+            </h2>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {additionalBenefits.map((benefit, index) => (
+                <div key={index} className="bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
+                  <div className="text-4xl mb-4 text-center">{benefit.icon}</div>
+                  <h3 className="text-lg font-semibold text-gray-800 mb-2 text-center">
+                    {t(benefit.title)}
+                  </h3>
+                  <p className="text-gray-600 text-sm text-center">
+                    {t(benefit.description)}
+                  </p>
+                </div>
+              ))}
+            </div>
           </div>
-        </section>
-        <section className="text-center mt-16">
-          <h2 className="text-2xl font-extrabold mb-6 bg-gradient-to-r from-green-500 via-blue-500 to-purple-500 bg-clip-text text-transparent drop-shadow-lg animate-fade-in">
-            {t('getStartedToday')}
-          </h2>
-          <p className="mb-8 text-lg text-gray-700 font-medium">{t('joinHotels')}</p>
-          <a
-            href="/form"
-            className="inline-block px-8 py-4 bg-gradient-to-r from-green-500 via-blue-500 to-purple-500 text-white font-bold rounded-xl shadow-lg hover:scale-105 hover:shadow-2xl transition-all duration-300 z-50 relative"
-          >
-            {t('signUpNow')}
-          </a>
-        </section>
-      </main>
+
+          {/* Comprehensive Services Section */}
+          <div className="text-center mb-16">
+            <h2 className="text-3xl font-bold text-gray-800 mb-4">
+              {t('our_comprehensive_services')}
+            </h2>
+            <p className="text-gray-600 mb-12 max-w-3xl mx-auto">
+              {t('comprehensive_services_description')}
+            </p>
+
+            {/* Internal Services */}
+            <div className="mb-12">
+              <div className="flex items-center justify-center gap-2 mb-8">
+                <span className="w-4 h-4 bg-blue-600 rounded-full"></span>
+                <h3 className="text-xl font-bold text-gray-800">{t('internal_services')}</h3>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                {/* Restaurant Management */}
+                <div className="bg-white rounded-3xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                  <div className="h-48 bg-gradient-to-br from-orange-400 to-red-500">
+                    <img
+                      src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                      alt="Restaurant Management"
+                      className="w-full h-full object-cover mix-blend-overlay"
+                    />
+                  </div>
+                  <div className="p-6">
+                    <div className="flex items-center gap-2 mb-3">
+                      <span className="text-2xl">🍽️</span>
+                      <h4 className="text-lg font-bold text-gray-800">{t('restaurant_management')}</h4>
+                    </div>
+                    <p className="text-gray-600 text-sm">
+                      {t('restaurant_management_desc')}
+                    </p>
+                  </div>
+                </div>
+
+                {/* Guest Management */}
+                <div className="bg-white rounded-3xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                  <div className="h-48 bg-gradient-to-br from-blue-400 to-purple-500">
+                    <img
+                      src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                      alt="Guest Management"
+                      className="w-full h-full object-cover mix-blend-overlay"
+                    />
+                  </div>
+                  <div className="p-6">
+                    <div className="flex items-center gap-2 mb-3">
+                      <span className="text-2xl">👥</span>
+                      <h4 className="text-lg font-bold text-gray-800">{t('guest_management')}</h4>
+                    </div>
+                    <p className="text-gray-600 text-sm">
+                      {t('guest_management_desc')}
+                    </p>
+                  </div>
+                </div>
+
+                {/* Room Management */}
+                <div className="bg-white rounded-3xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                  <div className="h-48 bg-gradient-to-br from-teal-400 to-green-500">
+                    <img
+                      src="https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                      alt="Room Management"
+                      className="w-full h-full object-cover mix-blend-overlay"
+                    />
+                  </div>
+                  <div className="p-6">
+                    <div className="flex items-center gap-2 mb-3">
+                      <span className="text-2xl">🛏️</span>
+                      <h4 className="text-lg font-bold text-gray-800">{t('room_management')}</h4>
+                    </div>
+                    <p className="text-gray-600 text-sm">
+                      {t('room_management_desc')}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* External Services */}
+            <div className="mb-12">
+              <div className="flex items-center justify-center gap-2 mb-8">
+                <span className="w-4 h-4 bg-green-600 rounded-full"></span>
+                <h3 className="text-xl font-bold text-gray-800">{t('external_services')}</h3>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                {/* Delivery Services */}
+                <div className="bg-gradient-to-br from-green-50 to-green-100 rounded-2xl p-6 border border-green-200 hover:shadow-lg transition-shadow duration-300">
+                  <div className="text-center">
+                    <div className="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <span className="text-white text-2xl">🚚</span>
+                    </div>
+                    <h4 className="text-lg font-bold text-gray-800 mb-2">{t('delivery_services')}</h4>
+                    <p className="text-gray-600 text-sm mb-4">
+                      {t('delivery_services_desc')}
+                    </p>
+                    <span className="inline-block px-3 py-1 bg-green-200 text-green-800 rounded-full text-xs font-medium">
+                      {t('delivery')}
+                    </span>
+                  </div>
+                </div>
+
+                {/* Tourism Services */}
+                <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-6 border border-blue-200 hover:shadow-lg transition-shadow duration-300">
+                  <div className="text-center">
+                    <div className="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <span className="text-white text-2xl">📍</span>
+                    </div>
+                    <h4 className="text-lg font-bold text-gray-800 mb-2">{t('tourism_services')}</h4>
+                    <p className="text-gray-600 text-sm mb-4">
+                      {t('tourism_services_desc')}
+                    </p>
+                    <span className="inline-block px-3 py-1 bg-blue-200 text-blue-800 rounded-full text-xs font-medium">
+                      {t('tourism')}
+                    </span>
+                  </div>
+                </div>
+
+                {/* Car Rental Services */}
+                <div className="bg-gradient-to-br from-purple-50 to-purple-100 rounded-2xl p-6 border border-purple-200 hover:shadow-lg transition-shadow duration-300">
+                  <div className="text-center">
+                    <div className="w-16 h-16 bg-purple-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <span className="text-white text-2xl">🚗</span>
+                    </div>
+                    <h4 className="text-lg font-bold text-gray-800 mb-2">{t('car_rental_services')}</h4>
+                    <p className="text-gray-600 text-sm mb-4">
+                      {t('car_rental_services_desc')}
+                    </p>
+                    <span className="inline-block px-3 py-1 bg-purple-200 text-purple-800 rounded-full text-xs font-medium">
+                      {t('rental')}
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* WhatsApp Integration Section */}
+          <div className="bg-gradient-to-br from-green-50 to-emerald-100 rounded-3xl p-8 mb-16">
+            <div className="text-center mb-8">
+              <div className="flex items-center justify-center gap-3 mb-4">
+                <div className="w-12 h-12 bg-green-500 rounded-2xl flex items-center justify-center">
+                  <span className="text-white text-2xl">📱</span>
+                </div>
+                <h2 className="text-3xl font-bold text-gray-800">
+                  {t('instant_continuous_communication')}
+                </h2>
+              </div>
+              <p className="text-gray-600 max-w-4xl mx-auto text-lg">
+                {t('whatsapp_integration_description')}
+              </p>
+
+              {/* WhatsApp Button */}
+              <div className="mt-6">
+                <a
+                  href="/form"
+                  className="bg-green-500 hover:bg-green-600 text-white font-bold px-6 py-3 rounded-full shadow-lg transition-all duration-300 flex items-center gap-2 mx-auto w-fit"
+                >
+                  <span className="text-xl">📱</span>
+                  {t('integrate_with_whatsapp')}
+                </a>
+              </div>
+            </div>
+
+            <div className="text-center mb-8">
+              <h3 className="text-xl font-bold text-gray-800 mb-4">
+                {t('how_integration_works')}
+              </h3>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {/* Hotel Notifications */}
+              <div className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                <div className="relative h-48 bg-gradient-to-br from-slate-600 to-slate-800">
+                  <img
+                    src="https://images.unsplash.com/photo-1556745757-8d76bdb6984b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                    alt="Hotel Notifications"
+                    className="w-full h-full object-cover mix-blend-overlay opacity-60"
+                  />
+                  <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-lg p-2">
+                    <span className="text-2xl">🔔</span>
+                  </div>
+                  <div className="absolute bottom-4 left-4 bg-green-500 rounded-full w-8 h-8 flex items-center justify-center">
+                    <span className="text-white text-sm">📱</span>
+                  </div>
+                </div>
+                <div className="p-6">
+                  <h4 className="text-lg font-bold text-gray-800 mb-2 flex items-center gap-2">
+                    <span className="text-2xl">📨</span>
+                    {t('hotel_notifications')}
+                  </h4>
+                  <p className="text-gray-600 text-sm">
+                    {t('hotel_notifications_desc')}
+                  </p>
+                </div>
+              </div>
+
+              {/* Guest Requests */}
+              <div className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                <div className="relative h-48 bg-gradient-to-br from-green-400 to-emerald-600">
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="w-24 h-24 bg-white/20 rounded-full flex items-center justify-center">
+                      <span className="text-white text-4xl">📱</span>
+                    </div>
+                  </div>
+                  <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-lg p-2">
+                    <span className="text-green-600 font-bold text-sm">1</span>
+                  </div>
+                  <div className="absolute bottom-4 left-4">
+                    <div className="bg-white rounded-lg px-3 py-1">
+                      <span className="text-green-600 text-xs font-medium">{t('request_sent')}</span>
+                    </div>
+                  </div>
+                </div>
+                <div className="p-6">
+                  <h4 className="text-lg font-bold text-gray-800 mb-2 flex items-center gap-2">
+                    <span className="text-2xl">📞</span>
+                    {t('guest_requests')}
+                  </h4>
+                  <p className="text-gray-600 text-sm">
+                    {t('guest_requests_desc')}
+                  </p>
+                </div>
+              </div>
+
+              {/* Automatic Updates */}
+              <div className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                <div className="relative h-48 bg-gradient-to-br from-emerald-400 to-green-600">
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="w-24 h-24 bg-white/20 rounded-full flex items-center justify-center">
+                      <span className="text-white text-4xl">🔄</span>
+                    </div>
+                  </div>
+                  <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-lg p-2">
+                    <span className="text-green-600 font-bold text-sm">2</span>
+                  </div>
+                  <div className="absolute bottom-4 left-4">
+                    <div className="bg-white rounded-lg px-3 py-1">
+                      <span className="text-green-600 text-xs font-medium">{t('auto_update')}</span>
+                    </div>
+                  </div>
+                </div>
+                <div className="p-6">
+                  <h4 className="text-lg font-bold text-gray-800 mb-2 flex items-center gap-2">
+                    <span className="text-2xl">🔄</span>
+                    {t('automatic_updates')}
+                  </h4>
+                  <p className="text-gray-600 text-sm">
+                    {t('automatic_updates_whatsapp_desc')}
+                  </p>
+                </div>
+              </div>
+
+              {/* External Service Providers */}
+              <div className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                <div className="relative h-48 bg-gradient-to-br from-purple-400 to-blue-600">
+                  <img
+                    src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                    alt="Service Providers"
+                    className="w-full h-full object-cover mix-blend-overlay opacity-50"
+                  />
+                  <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-lg p-2">
+                    <span className="text-purple-600 font-bold text-sm">3</span>
+                  </div>
+                  <div className="absolute bottom-4 left-4">
+                    <div className="bg-white rounded-lg px-3 py-1">
+                      <span className="text-purple-600 text-xs font-medium">{t('provider_connected')}</span>
+                    </div>
+                  </div>
+                </div>
+                <div className="p-6">
+                  <h4 className="text-lg font-bold text-gray-800 mb-2 flex items-center gap-2">
+                    <span className="text-2xl">👥</span>
+                    {t('external_service_providers_whatsapp')}
+                  </h4>
+                  <p className="text-gray-600 text-sm">
+                    {t('external_service_providers_whatsapp_desc')}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Main Benefits with WhatsApp Panel */}
+          <div className="bg-gradient-to-br from-gray-50 to-green-50 rounded-3xl p-8 mb-16">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold text-gray-800 mb-4">
+                {t('main_benefits_title')}
+              </h2>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+              {/* Left Side - Benefits Grid */}
+              <div className="space-y-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {/* Customer Satisfaction */}
+                  <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center mb-4">
+                      <span className="text-green-600 text-2xl">💚</span>
+                    </div>
+                    <h3 className="text-lg font-bold text-gray-800 mb-2">
+                      {t('customer_satisfaction_benefit')}
+                    </h3>
+                    <p className="text-gray-600 text-sm">
+                      {t('customer_satisfaction_benefit_desc')}
+                    </p>
+                  </div>
+
+                  {/* Transparency */}
+                  <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-4">
+                      <span className="text-blue-600 text-2xl">👁️</span>
+                    </div>
+                    <h3 className="text-lg font-bold text-gray-800 mb-2">
+                      {t('transparency_benefit')}
+                    </h3>
+                    <p className="text-gray-600 text-sm">
+                      {t('transparency_benefit_desc')}
+                    </p>
+                  </div>
+
+                  {/* Fast Response */}
+                  <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    <div className="w-12 h-12 bg-yellow-100 rounded-xl flex items-center justify-center mb-4">
+                      <span className="text-yellow-600 text-2xl">⚡</span>
+                    </div>
+                    <h3 className="text-lg font-bold text-gray-800 mb-2">
+                      {t('fast_response_benefit')}
+                    </h3>
+                    <p className="text-gray-600 text-sm">
+                      {t('fast_response_benefit_desc')}
+                    </p>
+                  </div>
+
+                  {/* Instant Notifications */}
+                  <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mb-4">
+                      <span className="text-purple-600 text-2xl">📱</span>
+                    </div>
+                    <h3 className="text-lg font-bold text-gray-800 mb-2">
+                      {t('instant_notifications_benefit')}
+                    </h3>
+                    <p className="text-gray-600 text-sm">
+                      {t('instant_notifications_benefit_desc')}
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Right Side - WhatsApp Integration Panel */}
+              <div className="bg-white rounded-3xl shadow-2xl overflow-hidden">
+                <div className="bg-gradient-to-r from-green-500 to-emerald-600 p-6">
+                  <div className="flex items-center justify-between">
+                    <h3 className="text-xl font-bold text-white">
+                      {t('whatsapp_integration_panel')}
+                    </h3>
+                    <div className="flex items-center gap-2">
+                      <span className="text-white text-sm">WhatsApp</span>
+                      <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center">
+                        <span className="text-green-600 text-sm font-bold">📱</span>
+                      </div>
+                    </div>
+                  </div>
+                  <p className="text-green-100 text-sm mt-2">
+                    {t('whatsapp_panel_description')}
+                  </p>
+                </div>
+
+                <div className="p-6 space-y-4">
+                  {/* WhatsApp Conversation Flow */}
+                  <div className="space-y-3">
+                    {/* Hotel System Message */}
+                    <div className="bg-green-100 rounded-2xl p-4 max-w-xs ml-auto">
+                      <div className="flex items-center gap-2 mb-2">
+                        <span className="text-xs text-green-600 font-medium">Qickroom</span>
+                        <span className="text-xs text-gray-500">الآن</span>
+                      </div>
+                      <p className="text-sm text-gray-800">
+                        {t('whatsapp_hotel_message')}
+                      </p>
+                    </div>
+
+                    {/* Guest Request Message */}
+                    <div className="bg-gray-100 rounded-2xl p-4 max-w-xs">
+                      <div className="flex items-center gap-2 mb-2">
+                        <span className="text-xs text-gray-600 font-medium">{t('guest')}</span>
+                        <span className="text-xs text-gray-500">منذ دقيقتين</span>
+                      </div>
+                      <p className="text-sm text-gray-800">
+                        {t('whatsapp_guest_message')}
+                      </p>
+                    </div>
+
+                    {/* Service Provider Response */}
+                    <div className="bg-blue-100 rounded-2xl p-4 max-w-xs ml-auto">
+                      <div className="flex items-center gap-2 mb-2">
+                        <span className="text-xs text-blue-600 font-medium">{t('service_provider')}</span>
+                        <span className="text-xs text-gray-500">منذ دقيقة</span>
+                      </div>
+                      <p className="text-sm text-gray-800">
+                        {t('whatsapp_provider_message')}
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Integration Steps */}
+                  <div className="border-t pt-4 mt-6">
+                    <h4 className="font-bold text-gray-800 mb-3 flex items-center gap-2">
+                      <span className="text-green-600">✓</span>
+                      {t('integration_completed')}
+                    </h4>
+                    <div className="space-y-2">
+                      <div className="flex items-center gap-3 text-sm">
+                        <span className="w-6 h-6 bg-green-500 rounded-full text-white text-xs flex items-center justify-center">✓</span>
+                        <span className="text-gray-700">{t('whatsapp_step_1')}</span>
+                      </div>
+                      <div className="flex items-center gap-3 text-sm">
+                        <span className="w-6 h-6 bg-blue-500 rounded-full text-white text-xs flex items-center justify-center">✓</span>
+                        <span className="text-gray-700">{t('whatsapp_step_2')}</span>
+                      </div>
+                      <div className="flex items-center gap-3 text-sm">
+                        <span className="w-6 h-6 bg-purple-500 rounded-full text-white text-xs flex items-center justify-center">✓</span>
+                        <span className="text-gray-700">{t('whatsapp_step_3')}</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Increase Your Profits Section */}
+          <div className="bg-white rounded-3xl shadow-xl p-8 mb-16">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              {/* Left Side - Content */}
+              <div className="space-y-8">
+                <div>
+                  <h2 className="text-3xl font-bold text-gray-800 mb-4 flex items-center gap-3">
+                    <span className="text-green-600">💰</span>
+                    {t('increase_profits_title')}
+                  </h2>
+                  <p className="text-gray-600 text-lg leading-relaxed">
+                    {t('increase_profits_description')}
+                  </p>
+                </div>
+
+                {/* Benefits List */}
+                <div className="space-y-4">
+                  <div className="flex items-center gap-3">
+                    <span className="w-6 h-6 bg-green-500 rounded-full text-white text-sm flex items-center justify-center">✓</span>
+                    <span className="text-gray-700">{t('profit_benefit_1')}</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <span className="w-6 h-6 bg-green-500 rounded-full text-white text-sm flex items-center justify-center">✓</span>
+                    <span className="text-gray-700">{t('profit_benefit_2')}</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <span className="w-6 h-6 bg-green-500 rounded-full text-white text-sm flex items-center justify-center">✓</span>
+                    <span className="text-gray-700">{t('profit_benefit_3')}</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <span className="w-6 h-6 bg-green-500 rounded-full text-white text-sm flex items-center justify-center">✓</span>
+                    <span className="text-gray-700">{t('profit_benefit_4')}</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <span className="w-6 h-6 bg-green-500 rounded-full text-white text-sm flex items-center justify-center">✓</span>
+                    <span className="text-gray-700">{t('profit_benefit_5')}</span>
+                  </div>
+                </div>
+
+                {/* CTA Button */}
+                <div>
+                  <a
+                    href="/form"
+                    className="bg-green-500 hover:bg-green-600 text-white font-bold px-8 py-4 rounded-xl shadow-lg transition-all duration-300 transform hover:scale-105 inline-block"
+                  >
+                    {t('discover_how_to_increase_profits')}
+                  </a>
+                </div>
+              </div>
+
+              {/* Right Side - Features Grid */}
+              <div className="space-y-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {/* Profit Margin Management */}
+                  <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-6 border border-blue-200">
+                    <div className="w-12 h-12 bg-blue-500 rounded-xl flex items-center justify-center mb-4">
+                      <span className="text-white text-2xl">📈</span>
+                    </div>
+                    <h3 className="text-lg font-bold text-gray-800 mb-2">
+                      {t('profit_margin_management')}
+                    </h3>
+                    <p className="text-gray-600 text-sm">
+                      {t('profit_margin_management_desc')}
+                    </p>
+                  </div>
+
+                  {/* Payment Processing */}
+                  <div className="bg-gradient-to-br from-purple-50 to-purple-100 rounded-2xl p-6 border border-purple-200">
+                    <div className="w-12 h-12 bg-purple-500 rounded-xl flex items-center justify-center mb-4">
+                      <span className="text-white text-2xl">💳</span>
+                    </div>
+                    <h3 className="text-lg font-bold text-gray-800 mb-2">
+                      {t('payment_processing')}
+                    </h3>
+                    <p className="text-gray-600 text-sm">
+                      {t('payment_processing_desc')}
+                    </p>
+                  </div>
+
+                  {/* Smart Management */}
+                  <div className="bg-gradient-to-br from-teal-50 to-teal-100 rounded-2xl p-6 border border-teal-200">
+                    <div className="w-12 h-12 bg-teal-500 rounded-xl flex items-center justify-center mb-4">
+                      <span className="text-white text-2xl">🧠</span>
+                    </div>
+                    <h3 className="text-lg font-bold text-gray-800 mb-2">
+                      {t('smart_management')}
+                    </h3>
+                    <p className="text-gray-600 text-sm">
+                      {t('smart_management_desc')}
+                    </p>
+                  </div>
+
+                  {/* Financial Reports */}
+                  <div className="bg-gradient-to-br from-orange-50 to-orange-100 rounded-2xl p-6 border border-orange-200">
+                    <div className="w-12 h-12 bg-orange-500 rounded-xl flex items-center justify-center mb-4">
+                      <span className="text-white text-2xl">📊</span>
+                    </div>
+                    <h3 className="text-lg font-bold text-gray-800 mb-2">
+                      {t('financial_reports')}
+                    </h3>
+                    <p className="text-gray-600 text-sm">
+                      {t('financial_reports_desc')}
+                    </p>
+                  </div>
+                </div>
+
+                {/* Statistics Section */}
+                <div className="bg-gradient-to-r from-green-500 to-emerald-600 rounded-2xl p-6 text-white">
+                  <div className="grid grid-cols-3 gap-6 text-center">
+                    <div>
+                      <div className="text-3xl font-bold mb-1">%45</div>
+                      <div className="text-green-100 text-sm">
+                        {t('revenue_increase_stat')}
+                      </div>
+                    </div>
+                    <div>
+                      <div className="text-3xl font-bold mb-1">%98</div>
+                      <div className="text-green-100 text-sm">
+                        {t('operation_accuracy_stat')}
+                      </div>
+                    </div>
+                    <div>
+                      <div className="text-3xl font-bold mb-1">72</div>
+                      <div className="text-green-100 text-sm">
+                        {t('time_savings_stat')}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* FAQ Section */}
+          <div className="bg-white rounded-3xl shadow-xl p-8 mb-16">
+            <h2 className="text-3xl font-bold text-gray-800 mb-8 text-center">
+              {t('frequently_asked_questions')}
+            </h2>
+            <p className="text-gray-600 text-center mb-8">
+              {t('faq_description')}
+            </p>
+
+            <div className="space-y-4 max-w-4xl mx-auto">
+              {faqData.map((faq, index) => (
+                <div key={index} className="border border-gray-200 rounded-xl overflow-hidden">
+                  <button
+                    className="w-full text-left p-6 hover:bg-gray-50 transition-colors flex items-center justify-between"
+                    onClick={() => toggleFAQ(index)}
+                  >
+                    <h3 className="font-semibold text-gray-800 text-lg">
+                      {t(faq.question)}
+                    </h3>
+                    <span className={`text-2xl transition-transform duration-300 ${expandedFAQ === index ? 'rotate-180' : ''}`}>
+                      ⌄
+                    </span>
+                  </button>
+                  {expandedFAQ === index && (
+                    <div className="px-6 pb-6 pt-0">
+                      <div className="border-t border-gray-100 pt-4">
+                        <p className="text-gray-600 leading-relaxed">
+                          {t(faq.answer)}
+                        </p>
+                      </div>
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+
+            <div className="text-center mt-8">
+              <p className="text-gray-600 mb-4">{t('no_answer_found')}</p>
+              <a
+                href="/form"
+                className="text-blue-600 hover:text-blue-800 underline font-medium"
+              >
+                {t('contact_support_team')}
+              </a>
+            </div>
+          </div>
+
+          {/* CTA Section */}
+          <div className="text-center">
+            <a
+              href="/form"
+              className="inline-block px-8 py-4 bg-gradient-to-r from-green-500 to-blue-500 text-white font-bold rounded-xl shadow-lg hover:scale-105 hover:shadow-2xl transition-all duration-300"
+            >
+              {t('getStarted')}
+            </a>
+          </div>
+        </div>
+      </div>
+
       <Footer />
     </div>
   );
-
 };
 
 export default HomePage;
