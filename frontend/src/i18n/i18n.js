@@ -198,6 +198,13 @@ const resources = {
       "phone": "Phone Number",
       "numAdmins": "Number of Hotel Admins",
       "role": "Role",
+      "instant_notifications_immediate": "Instant Notifications",
+      "instant_notifications_immediate_desc": "Get immediate notifications via WhatsApp for all hotel requests and updates with real-time synchronization.",
+      "real_time_delivery_tracking": "Real-time Tracking",
+      "real_time_delivery_tracking_desc": "Track all service delivery times and receive updates through advanced communication systems.",
+      "personal_communication": "Personal Communication",
+      "personal_communication_desc": "Direct and personal communication between guests and specialized service providers via the platform.",
+      "revenue_increase_communication_desc": "Increase hotel revenue through improved communication and enhanced customer experience management.",
       "services": "Services",
       "additionalNotes": "Additional Notes",
       "submitApplication": "Submit Application",
@@ -469,7 +476,14 @@ const resources = {
   "service_fitness_desc": "دخول الصالة الرياضية، مدربون شخصيون، ودروس لياقة.",
   "role_super_admin": "مدير عام",
   "role_hotel_admin": "مدير فندق",
-  "select_option": "اختر..."
+  "select_option": "اختر...",
+  "instant_notifications_immediate": "إشعارات فورية",
+  "instant_notifications_immediate_desc": "احصل على إشعارات فورية عبر الواتساب لجميع طلبات الفندق والتحديثات مع المزامنة في الوقت الفعلي.",
+  "real_time_delivery_tracking": "تتبع في الوقت الفعلي",
+  "real_time_delivery_tracking_desc": "تتبع جميع أوقات تسليم الخدمات واحصل على التحديثات من خلال أنظمة الاتصال المتقدمة.",
+  "personal_communication": "تواصل شخصي",
+  "personal_communication_desc": "تواصل مباشر وشخصي بين النزلاء ومقدمي الخدمات المتخصصين عبر المنصة.",
+  "revenue_increase_communication_desc": "زيادة إيرادات الفندق من خلال تحسين التواصل وإدارة تجربة العملاء المحسنة."
     }
   }
 };

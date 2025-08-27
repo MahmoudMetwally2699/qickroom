@@ -319,7 +319,7 @@ const HomePage = () => {
                 <div className="bg-white rounded-3xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
                   <div className="h-48 bg-gray-100">
                     <img
-                      src="/Guest Management.webp"
+                      src="/Guest Management.jpg"
                       alt="Guest Management"
                       className="w-full h-full object-cover"
                     />
@@ -461,190 +461,68 @@ const HomePage = () => {
               </div>
             </div>
 
-            <div className="text-center mb-8">
-              <h3 className="text-xl font-bold text-gray-800 mb-4">
-                {t('how_integration_works')}
-              </h3>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {/* Hotel Notifications */}
-              <div className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
-                <div className="relative h-48 bg-gradient-to-br from-slate-600 to-slate-800">
-                  <img
-                    src="https://images.unsplash.com/photo-1556745757-8d76bdb6984b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
-                    alt="Hotel Notifications"
-                    className="w-full h-full object-cover mix-blend-overlay opacity-60"
-                  />
-                  <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-lg p-2">
-                    <span className="material-icons text-2xl">notifications</span>
-                  </div>
-                  <div className="absolute bottom-4 left-4 bg-green-500 rounded-full w-8 h-8 flex items-center justify-center">
-                    <span className="material-icons text-white text-sm">smartphone</span>
-                  </div>
-                </div>
-                <div className="p-6">
-                  <h4 className="text-lg font-bold text-gray-800 mb-2 flex items-center gap-2">
-                    <span className="material-icons text-2xl">email</span>
-                    {t('hotel_notifications')}
-                  </h4>
-                  <p className="text-gray-600 text-sm">
-                    {t('hotel_notifications_desc')}
-                  </p>
-                </div>
-              </div>
-
-              {/* Guest Requests */}
-              <div className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
-                <div className="relative h-48 bg-gradient-to-br from-green-400 to-green-600">
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="w-24 h-24 bg-white/20 rounded-full flex items-center justify-center">
-                      <span className="material-icons text-white text-4xl">smartphone</span>
-                    </div>
-                  </div>
-                  <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-lg p-2">
-                    <span className="text-green-600 font-bold text-sm">1</span>
-                  </div>
-                  <div className="absolute bottom-4 left-4">
-                    <div className="bg-white rounded-lg px-3 py-1">
-                      <span className="text-green-600 text-xs font-medium">{t('request_sent')}</span>
-                    </div>
-                  </div>
-                </div>
-                <div className="p-6">
-                  <h4 className="text-lg font-bold text-gray-800 mb-2 flex items-center gap-2">
-                    <span className="material-icons text-2xl text-green-600">phone</span>
-                    {t('guest_requests')}
-                  </h4>
-                  <p className="text-gray-600 text-sm">
-                    {t('guest_requests_desc')}
-                  </p>
-                </div>
-              </div>
-
-              {/* Automatic Updates */}
-              <div className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
-                <div className="relative h-48 bg-gradient-to-br from-green-400 to-green-600">
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="w-24 h-24 bg-white/20 rounded-full flex items-center justify-center">
-                      <span className="material-icons text-white text-4xl">sync</span>
-                    </div>
-                  </div>
-                  <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-lg p-2">
-                    <span className="text-green-600 font-bold text-sm">2</span>
-                  </div>
-                  <div className="absolute bottom-4 left-4">
-                    <div className="bg-white rounded-lg px-3 py-1">
-                      <span className="text-green-600 text-xs font-medium">{t('auto_update')}</span>
-                    </div>
-                  </div>
-                </div>
-                <div className="p-6">
-                  <h4 className="text-lg font-bold text-gray-800 mb-2 flex items-center gap-2">
-                    <span className="material-icons text-2xl text-green-600">sync</span>
-                    {t('automatic_updates')}
-                  </h4>
-                  <p className="text-gray-600 text-sm">
-                    {t('automatic_updates_whatsapp_desc')}
-                  </p>
-                </div>
-              </div>
-
-              {/* External Service Providers */}
-              <div className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
-                <div className="relative h-48 bg-gray-100">
-                  <img
-                    src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
-                    alt="Service Providers"
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-lg p-2">
-                    <span className="text-green-600 font-bold text-sm">3</span>
-                  </div>
-                  <div className="absolute bottom-4 left-4">
-                    <div className="bg-white rounded-lg px-3 py-1">
-                      <span className="text-green-600 text-xs font-medium">{t('provider_connected')}</span>
-                    </div>
-                  </div>
-                </div>
-                <div className="p-6">
-                  <h4 className="text-lg font-bold text-gray-800 mb-2 flex items-center gap-2">
-                    <span className="material-icons text-2xl text-green-600">group</span>
-                    {t('external_service_providers_whatsapp')}
-                  </h4>
-                  <p className="text-gray-600 text-sm">
-                    {t('external_service_providers_whatsapp_desc')}
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Main Benefits with WhatsApp Mobile Mockup */}
-          <div id="benefits" className="bg-gradient-to-br from-gray-50 to-green-50 rounded-3xl p-8 mb-16">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-gray-800 mb-4">
-                {t('main_benefits')}
-              </h2>
-              <p className="text-gray-600 max-w-3xl mx-auto">
-                {t('main_benefits_subtitle')}
-              </p>
-            </div>
-
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              {/* Left Side - Benefits Grid */}
-              <div className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  {/* Automatic Updates */}
-                  <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
-                    <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-4">
-                      <span className="material-icons text-blue-600 text-2xl">update</span>
+              {/* Left Side - Icon Features */}
+              <div className="space-y-8">
+                <div className="grid grid-cols-1 gap-6">
+                  {/* Instant Notifications */}
+                  <div className="flex items-center gap-4 p-4 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    <div className="w-16 h-16 bg-green-100 rounded-2xl flex items-center justify-center flex-shrink-0">
+                      <span className="material-icons text-green-600 text-3xl">notifications</span>
                     </div>
-                    <h3 className="text-lg font-bold text-gray-800 mb-2">
-                      {t('automatic_updates')}
-                    </h3>
-                    <p className="text-gray-600 text-sm">
-                      {t('automatic_updates_desc')}
-                    </p>
+                    <div className="flex-1">
+                      <h4 className="text-lg font-bold text-gray-800 mb-1">
+                        {t('instant_notifications_immediate')}
+                      </h4>
+                      <p className="text-gray-600 text-sm">
+                        {t('instant_notifications_immediate_desc')}
+                      </p>
+                    </div>
                   </div>
 
-                  {/* External Service Provider */}
-                  <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
-                    <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-4">
-                      <span className="material-icons text-blue-600 text-2xl">business</span>
+                  {/* Real-time Delivery */}
+                  <div className="flex items-center gap-4 p-4 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    <div className="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center flex-shrink-0">
+                      <span className="material-icons text-blue-600 text-3xl">schedule</span>
                     </div>
-                    <h3 className="text-lg font-bold text-gray-800 mb-2">
-                      {t('external_service_provider')}
-                    </h3>
-                    <p className="text-gray-600 text-sm">
-                      {t('external_service_provider_desc')}
-                    </p>
+                    <div className="flex-1">
+                      <h4 className="text-lg font-bold text-gray-800 mb-1">
+                        {t('real_time_delivery_tracking')}
+                      </h4>
+                      <p className="text-gray-600 text-sm">
+                        {t('real_time_delivery_tracking_desc')}
+                      </p>
+                    </div>
                   </div>
 
-                  {/* Fast & Instant Response */}
-                  <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
-                    <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-4">
-                      <span className="material-icons text-blue-600 text-2xl">flash_on</span>
+                  {/* Personal Communication */}
+                  <div className="flex items-center gap-4 p-4 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    <div className="w-16 h-16 bg-orange-100 rounded-2xl flex items-center justify-center flex-shrink-0">
+                      <span className="material-icons text-orange-600 text-3xl">person</span>
                     </div>
-                    <h3 className="text-lg font-bold text-gray-800 mb-2">
-                      {t('fast_instant_response')}
-                    </h3>
-                    <p className="text-gray-600 text-sm">
-                      {t('fast_instant_response_desc')}
-                    </p>
+                    <div className="flex-1">
+                      <h4 className="text-lg font-bold text-gray-800 mb-1">
+                        {t('personal_communication')}
+                      </h4>
+                      <p className="text-gray-600 text-sm">
+                        {t('personal_communication_desc')}
+                      </p>
+                    </div>
                   </div>
 
-                  {/* Instant Notification */}
-                  <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
-                    <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-4">
-                      <span className="material-icons text-blue-600 text-2xl">notifications</span>
+                  {/* Revenue Increase */}
+                  <div className="flex items-center gap-4 p-4 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    <div className="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center flex-shrink-0">
+                      <span className="material-icons text-purple-600 text-3xl">trending_up</span>
                     </div>
-                    <h3 className="text-lg font-bold text-gray-800 mb-2">
-                      {t('instant_notification')}
-                    </h3>
-                    <p className="text-gray-600 text-sm">
-                      {t('instant_notification_desc')}
-                    </p>
+                    <div className="flex-1">
+                      <h4 className="text-lg font-bold text-gray-800 mb-1">
+                        {t('revenue_increase')}
+                      </h4>
+                      <p className="text-gray-600 text-sm">
+                        {t('revenue_increase_communication_desc')}
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -752,6 +630,73 @@ const HomePage = () => {
                     </div>
                   </div>
                 </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Main Benefits */}
+          <div id="benefits" className="bg-gradient-to-br from-gray-50 to-green-50 rounded-3xl p-8 mb-16">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold text-gray-800 mb-4">
+                {t('main_benefits')}
+              </h2>
+              <p className="text-gray-600 max-w-3xl mx-auto">
+                {t('main_benefits_subtitle')}
+              </p>
+            </div>
+
+            {/* Benefits Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {/* Automatic Updates */}
+              <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-4">
+                  <span className="material-icons text-blue-600 text-2xl">update</span>
+                </div>
+                <h3 className="text-lg font-bold text-gray-800 mb-2">
+                  {t('automatic_updates')}
+                </h3>
+                <p className="text-gray-600 text-sm">
+                  {t('automatic_updates_desc')}
+                </p>
+              </div>
+
+              {/* External Service Provider */}
+              <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-4">
+                  <span className="material-icons text-blue-600 text-2xl">business</span>
+                </div>
+                <h3 className="text-lg font-bold text-gray-800 mb-2">
+                  {t('external_service_provider')}
+                </h3>
+                <p className="text-gray-600 text-sm">
+                  {t('external_service_provider_desc')}
+                </p>
+              </div>
+
+              {/* Fast & Instant Response */}
+              <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-4">
+                  <span className="material-icons text-blue-600 text-2xl">flash_on</span>
+                </div>
+                <h3 className="text-lg font-bold text-gray-800 mb-2">
+                  {t('fast_instant_response')}
+                </h3>
+                <p className="text-gray-600 text-sm">
+                  {t('fast_instant_response_desc')}
+                </p>
+              </div>
+
+              {/* Instant Notification */}
+              <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-4">
+                  <span className="material-icons text-blue-600 text-2xl">notifications</span>
+                </div>
+                <h3 className="text-lg font-bold text-gray-800 mb-2">
+                  {t('instant_notification')}
+                </h3>
+                <p className="text-gray-600 text-sm">
+                  {t('instant_notification_desc')}
+                </p>
               </div>
             </div>
           </div>
