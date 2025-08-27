@@ -437,7 +437,7 @@ const HomePage = () => {
                   <span className="material-icons text-white text-2xl">smartphone</span>
                 </div>
                 <h2 className="text-3xl font-bold text-gray-800">
-                  Instant & Continuous Communication
+                  {t('instant_continuous_communication')}
                 </h2>
               </div>
               <p className="text-gray-600 max-w-4xl mx-auto text-lg">
