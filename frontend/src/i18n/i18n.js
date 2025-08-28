@@ -434,7 +434,7 @@ const resources = {
       "servicesField": "تحديد الخدمات المطلوب تفعيلها",
       "serviceDescriptionField": "وصف سريع عن الخدمات التي تريد إدارتها",
       "howDidYouKnowField": "كيف تعرفت علينا؟",
-  "hotelSignupForm": "انضم إلى كيك: نموذج تسجيل الفندق",
+  "hotelSignupForm": "انضم إلى كيك روم: نموذج تسجيل الفندق",
       "hotelName": "اسم الفندق",
       "email": "البريد الإلكتروني",
       "phone": "رقم الهاتف",

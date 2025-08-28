@@ -72,6 +72,7 @@ const FormPage = () => {
         });
       }
     } catch (error) {
+      console.error('Form submission error:', error);
       toast.error('An error occurred.', {
         position: 'top-center',
         autoClose: 3000,
@@ -87,7 +88,7 @@ const FormPage = () => {
   <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-blue-100 via-blue-200 to-blue-400 px-4">
       <ToastContainer />
       <div className="backdrop-blur-lg bg-white/70 border border-white/40 rounded-2xl shadow-2xl p-10 w-full max-w-xl transition-all duration-500 hover:scale-[1.02] hover:shadow-3xl">
-  <h2 className="text-3xl font-extrabold mb-8 text-center bg-gradient-to-r from-blue-500 via-purple-500 to-blue-400 bg-clip-text text-transparent drop-shadow-lg animate-fade-in">
+  <h2 className="text-3xl font-extrabold mb-8 text-center drop-shadow-lg animate-fade-in" style={{color: '#155DFC'}}>
           {t('hotelSignupForm')}
         </h2>
         <form className="space-y-4" onSubmit={handleSubmit}>
