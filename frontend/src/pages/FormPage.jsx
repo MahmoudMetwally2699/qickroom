@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useTranslation } from 'react-i18next';
@@ -26,6 +27,7 @@ const roleOptions = [
 // ...existing code...
 const FormPage = () => {
   const { t } = useTranslation();
+  const navigate = useNavigate();
   const [selectedServices, setSelectedServices] = React.useState([]);
 
   const handleServicesChange = (e) => {
@@ -53,13 +55,14 @@ const FormPage = () => {
       if (response.ok) {
         toast.success('Form submitted successfully!', {
           position: 'top-center',
-          autoClose: 3000,
+          autoClose: 2000,
           hideProgressBar: false,
           closeOnClick: true,
           pauseOnHover: true,
           draggable: true,
           progress: undefined,
         });
+        setTimeout(() => navigate('/'), 2000);
       } else {
         toast.error('Submission failed.', {
           position: 'top-center',
